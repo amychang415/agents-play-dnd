@@ -5,7 +5,6 @@ import csv
 from llm_utils import *
 from agents import agent_list
 from plans import *
-from persona_groups import *
 
 class Agent:
     def __init__(self, name, persona):
@@ -399,8 +398,8 @@ if __name__ == "__main__":
     senario = """The region surrounding Welton is a quiet and pastoral land, where small, self-reliant villages are scattered across rolling hills and dense forests. For years, the people of these villages have enjoyed a relatively peaceful existence, with their concerns limited to the cycles of planting and harvest or the occasional minor squabble among neighbors. Life in this part of the world moves slowly, and the townsfolk place their faith in hard work, tradition, and their local leaders. However, beneath the surface of this idyllic setting lies a tension—ancient woods, whispered to hold secrets of the arcane, stretch out beyond the farmlands, a boundary that the villagers rarely cross.
 Welton, perched on the edge of these woods, is a picturesque settlement with white-walled cottages and a bustling community of farmers, shepherds, and traders. But the calm has been shattered. Wolves, far more cunning and organized than the villagers have ever encountered, are attacking farms and driving families from their homes. The people’s protector, a local sorcerer, has mysteriously vanished, leaving Welton vulnerable. Now, food supplies dwindle, and the village faces ruin unless something is done. The call for help has gone out: Welton offers a generous reward to any who can rid them of this menace. Whether you come to answer that call or simply pass through, Welton and its dark woods beckon, hiding a mystery that could change everything. Will you uncover the truth or fall prey to the wilderness?
 """
-    group_num = 4
-    for persona_group in groups_two:
+    group_num = 1
+    for persona_group in agents_list:
         initialized_agents = [Agent(agent_data["name"], agent_data["persona"]) for agent_data in persona_group]
     
         game = Game(initialized_agents, senario)
